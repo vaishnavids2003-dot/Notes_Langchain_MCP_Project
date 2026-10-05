@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "demo-filesystem-wiretapped": {
+      "command": "python3",
+      "args": [
+        "/path/to/mcp_wiretap.py",
+        "--log",
+        "/path/to/wiretap-live.log",
+        "--",
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/the/directory/you/want/to/expose"
+      ]
+    },
+    "RecipeBox_Updated": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--with",
+        "fastmcp",
+        "fastmcp",
+        "run",
+        "/path/to/first-mcp-server/recipebox_fastmcp.py"
+      ]
+    }
+  }
+}

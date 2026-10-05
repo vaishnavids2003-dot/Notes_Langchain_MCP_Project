@@ -1,0 +1,24 @@
+name: Cross-OS checkout audit
+
+# Fails a push / PR that would break `git clone` or `git pull` for students on Windows, macOS or Linux
+# (illegal characters, trailing spaces, nested repos, over-long paths, case collisions, ...).
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  audit:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      # The checkout itself is the real test: it fails here if a path is invalid on this OS.
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit tracked paths
+        run: python scripts/check_repo_paths.py

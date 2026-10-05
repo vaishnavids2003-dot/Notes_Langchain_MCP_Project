@@ -1,0 +1,14 @@
+[project]
+name = "project-zero"
+version = "0.3.0"
+description = "Project Zero -- an AI agent built with no framework."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "openai>=1.40.0",
+    "anthropic>=0.30.0",
+    "requests>=2.31.0",
+    "streamlit>=1.38.0",
+]

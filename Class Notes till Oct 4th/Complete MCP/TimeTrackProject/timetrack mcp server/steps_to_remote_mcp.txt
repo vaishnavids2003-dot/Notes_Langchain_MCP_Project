@@ -1,0 +1,8 @@
+Create a clean, separate repository containing just the MCP server piece -- not your whole learning project. This matters: Horizon builds from exactly what's in the repo, so notes, scratch files, and unrelated course material don't belong there.
+Make sure that clean repo has main.py, database.py, pyproject.toml, and uv.lock
+Push it to GitHub
+Sign in at https://horizon.prefect.io with that GitHub account
+Select the repository
+Configure:
+Server name: e.g. timetrack
+Entrypoint: main.py:mcp
